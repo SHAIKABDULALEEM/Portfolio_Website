@@ -1,0 +1,487 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* Dark background for cyberpunk theme */
+    color: #e0e0e0; /* Light text for dark mode */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body:not(.dark-mode) {
+    background-color: #f4f4f4; /* Light background for normal mode */
+    color: #333; /* Dark text for normal mode */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #00ffcc; /* Neon cyan for headings in dark mode */
+}
+
+body:not(.dark-mode) h1{
+    color: #fff;
+}
+body:not(.dark-mode) h2
+body:not(.dark-mode) h3 {
+    color: #8d6e63; /* Blue for headings in normal mode */
+}
+
+a {
+    text-decoration: none;
+    color: #00ffcc; /* Neon cyan for links in dark mode */
+}
+
+body:not(.dark-mode) a {
+    color: #007BFF; /* Blue for links in normal mode */
+}
+
+a:hover {
+    color: #ff00ff; /* Neon pink for hover in dark mode */
+}
+
+body:not(.dark-mode) a:hover {
+    color: #0056b3; /* Darker blue for hover in normal mode */
+}
+
+/* Dark Mode Toggle */
+.theme-switch-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00ffcc; /* Neon cyan for toggle in dark mode */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+#toggle-icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #00ffcc; /* Neon cyan for icon in dark mode */
+}
+
+body:not(.dark-mode) #toggle-icon {
+    color: #8d6e63; /* Blue for icon in normal mode */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #00ffcc, #ff00ff); /* Neon gradient for dark mode */
+    color: #0d0d0d; /* Dark text for header in dark mode */
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: glow 2s infinite alternate;
+}
+
+body:not(.dark-mode) header {
+    background: linear-gradient(135deg, #8d6e63, #6d4c41); /* Brown gradient */
+    color: #fff; /* White text for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    animation: flicker 1.5s infinite alternate;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+    animation: flicker 1.5s infinite alternate;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #0d0d0d; /* Dark text for links in dark mode */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+body:not(.dark-mode) header nav ul li a {
+    color: #fff; /* White text for links in normal mode */
+}
+
+header nav ul li a:hover {
+    color: #ff00ff; /* Neon pink for hover in dark mode */
+}
+
+body:not(.dark-mode) header nav ul li a:hover {
+    color: #ffd54f; /* Gold for hover in normal mode */
+}
+
+/* About Section */
+.about {
+    background: #1a1a1a; /* Dark background for about section in dark mode */
+    padding: 60px 0;
+}
+
+body:not(.dark-mode) .about {
+    background-color: #fff; /* White background */
+    border: 1px solid #8d6e63; /* Brown border */
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+    animation: flicker 1.5s infinite alternate;
+}
+
+body:not(.dark-mode) .about h2 {
+    color: #6d4c41; /* Dark brown for heading  in normal mode */
+}
+
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Experience Section */
+.experience {
+    background: #0d0d0d; /* Dark background for experience section in dark mode */
+    padding: 60px 0;
+}
+
+body:not(.dark-mode) .experience {
+    background: #f4f4f4; /* Light background for experience section in normal mode */
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+    animation: flicker 1.5s infinite alternate;
+}
+
+body:not(.dark-mode) .experience h2 {
+    color: #6d4c41; /* Dark brown for heading  in normal mode */
+}
+
+.experience-item {
+    background: #1a1a1a; /* Dark background for experience items in dark mode */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #00ffcc; /* Neon border for experience items in dark mode */
+}
+
+body:not(.dark-mode) .experience-item {
+    background-color: #fff; /* White background */
+    border: 1px solid #8d6e63; /* Brown border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #00ffcc; /* Neon glow on hover in dark mode */
+}
+
+body:not(.dark-mode) .experience-item:hover {
+    box-shadow: 0 0 15px #8d6e63; /* Brown glow on hover in normal mode */
+}
+
+.experience-item h3 {
+    margin-top: 0;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+}
+
+body:not(.dark-mode) .experience-item h3 {
+    color: #6d4c41; /* Dark brown for heading in normal mode */
+}
+
+/* Projects Section */
+.projects {
+    background: #1a1a1a; /* Dark background for projects section in dark mode */
+    padding: 60px 0;
+}
+
+body:not(.dark-mode) .projects {
+    background: #fff; /* White background for projects section in normal mode */
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+    animation: flicker 1.5s infinite alternate;
+}
+
+body:not(.dark-mode) .projects h2 {
+    color: #6d4c41; /* Dark brown for heading  in normal mode */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background: #1a1a1a; /* Dark background for project items in dark mode */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #00ffcc; /* Neon border for project items in dark mode */
+}
+
+body:not(.dark-mode) .project-item {
+    background-color: #fff; /* White background */
+    border: 1px solid #8d6e63; /* Brown border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #00ffcc; /* Neon glow on hover in dark mode */
+}
+
+body:not(.dark-mode) .project-item:hover {
+    box-shadow: 0 0 15px #8d6e63; /* Brown glow on hover in normal mode */
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+}
+
+body:not(.dark-mode) .project-item h3 {
+    color: #6d4c41; /* Dark brown for heading in normal mode */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00ffcc; /* Neon cyan for buttons in dark mode */
+    color: #0d0d0d; /* Dark text for buttons in dark mode */
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+body:not(.dark-mode) .btn {
+    background-color: #8d6e63; /* Brown for buttons in normal mode */
+    color: #fff; /* White text for buttons in normal mode */
+}
+
+.btn:hover {
+    background: #ff00ff; /* Neon pink for hover in dark mode */
+}
+
+body:not(.dark-mode) .btn:hover {
+    background-color: #6d4c41; /* Darker brown for hover in normal mode */
+}
+
+/* Skills Section */
+.skills {
+    background: #0d0d0d; /* Dark background for skills section in dark mode */
+    padding: 60px 0;
+}
+
+body:not(.dark-mode) .skills {
+    background: #f4f4f4; /* Light background for skills section in normal mode */
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+    animation: flicker 1.5s infinite alternate;
+}
+
+body:not(.dark-mode) .skills h2 {
+    color: #6d4c41; /* Dark brown for heading in normal mode */
+}
+body:not(.dark-mode) .skills h3 {
+    color: #6d4c41; /* Dark brown for heading in normal mode */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    background: #1a1a1a; /* Dark background for skill items in dark mode */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid #00ffcc; /* Neon border for skill items in dark mode */
+}
+
+body:not(.dark-mode) .skill-item {
+    background: #fff; /* White background for skill items in normal mode */
+    border: 1px solid #8d6e63; /* Brown border skill items in normal mode */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #00ffcc; /* Neon glow on hover in dark mode */
+}
+
+body:not(.dark-mode) .skill-item:hover {
+    box-shadow: 0 0 15px #8d6e63; /* Brown glow on hover in normal mode */
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: #00ffcc; /* Neon cyan for icons in dark mode */
+}
+
+body:not(.dark-mode) .skill-item i {
+    color: #8d6e63; /* Brown for icons in normal mode */
+}
+
+/* Contact Section */
+.contact {
+    background: #1a1a1a; /* Dark background for contact section in dark mode */
+    padding: 60px 0;
+}
+
+body:not(.dark-mode) .contact {
+    background: #fff; /* White background for contact section in normal mode */
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #00ffcc; /* Neon cyan for heading in dark mode */
+    animation: flicker 1.5s infinite alternate;
+}
+
+body:not(.dark-mode) .contact h2 {
+    color: #6d4c41; /* Dark brown for heading  in normal mode */
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #00ffcc; /* Neon cyan for icons in dark mode */
+}
+
+body:not(.dark-mode) .contact-info i {
+    color: #8d6e63; /* Brown for icons in normal mode */
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #00ffcc, #ff00ff); /* Neon gradient for footer in dark mode */
+    color: #0d0d0d; /* Dark text for footer in dark mode */
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) footer {
+    background: linear-gradient(135deg, #8d6e63, #6d4c41); /* Brown gradient */
+    color: #fff; /* White text for contrast in normal mode */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    }
+    100% {
+        box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 60px #00ffcc;
+    }
+}
